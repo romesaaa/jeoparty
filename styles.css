@@ -1,0 +1,202 @@
+/* Base Styles */
+body {
+  font-family: 'Orbitron', sans-serif;
+  background: linear-gradient(to bottom, #240046, #5a189a, #7b2cbf);
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('mountain.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #edf2f4;
+}
+
+/* Header with Full Image Background
+header {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  background: url('photo.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 20px #000000, 0 0 30px #480ca8;
+} */
+
+header h1 {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 3rem;
+  background: rgba(0, 0, 0, 0.6); /* Slight overlay for text readability */
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+/* Scores Section */
+#scores {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px auto;
+  width: 90%;
+}
+
+.team {
+  background: linear-gradient(to right, #7209b7, #560bad);
+  padding: 10px 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(145, 10, 255, 0.8), 0 0 20px rgba(119, 0, 255, 0.8);
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* Make table cells larger */
+#board th, #board td {
+  border: 1px solid white;
+  padding: 20px; /* Increases the size of each cell */
+  text-align: center;
+  cursor: pointer;
+  background-color: rgba(216, 40, 216, 0.4); /* Slightly transparent */
+  color: #ffffff; /* Keep text fully opaque for readability */
+  font-size: 40px;
+  font-weight: bold;
+  border-radius: 10px; /* Rounded edges */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for depth */
+  height: 50px; /* Ensures cells are vertically taller */
+}
+
+#board th {
+  border-radius: 17px; /* Rounded edges */
+  font-size: 24px;
+  background-color: rgb(199,36,177,0.6);
+  height: 20px; /* Taller header cells */
+}
+
+#board {
+  width: 100%; /* Stretches to fit horizontally */
+  border-collapse: separate; /* Allows spacing between cells */
+  border-spacing: 10px; /* Adds space between cells */
+  margin: 20px auto;
+  table-layout: fixed; /* Ensures cells are evenly distributed */
+}
+
+
+#board td.disabled {
+  background-color: rgba(128, 128, 128, 0.6); /* Gray for used cells */
+  cursor: not-allowed;
+}
+
+
+#board td:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #9d4edd, 0 0 30px #7b2cbf;
+}
+
+#board td.disabled {
+  background: gray;
+  color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Modal 
+#question-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(to right, #5a189a, #9d4edd);
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+  width: 60%;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(106, 0, 255, 0.8);
+}
+*/
+#question-image {
+  width: 500px;      
+  height: 300px;     
+  object-fit: cover;  
+  display: none;     /* Hide the image initially */
+}
+
+#question-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 35px;
+  background: url('mountain.jpg') no-repeat center center fixed;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 1000; /* Ensure it's on top of other content */
+}
+
+#question-content {
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent content box */
+  border-radius: 10px;
+  padding: 50px;
+  max-width: 80%; /* Prevents content from being too wide */
+  margin: 0 auto;
+}
+/*
+#question-modal h2, #question-modal p, #question-modal button {
+  font-size: 50px;
+  font-weight: bold; 
+}
+*/
+
+#question-modal button {
+  margin-top: 20px;
+  font-size: 15;
+  padding: 10px 20px;
+  background-color: #ef233c;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+#question-modal button:hover {
+  font-size: 20;
+ /* transform: scale(1.1); */
+  box-shadow: 0 0 10px #ff9d00, 0 0 15px #ff004c;
+}
+
+/* Timer */
+#timer {
+  font-size: 1.5rem;
+  color: #ff9d00;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  #board td {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  #question-modal {
+    width: 80%;
+  }
+}
